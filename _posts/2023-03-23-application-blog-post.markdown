@@ -48,6 +48,40 @@ public class ImageData {
     }
 ```
 
-Every Snapshot has only one image and vice versa so I implemented a OneToOneRelationship. To avoid infinite recursion I added the JsonBackReference annotation to the snapshotfield.
+Every Snapshot has only one image and vice versa so I implemented a OneToOne-Relationship. To avoid *Infinite Recursion* I added the JsonBackReference annotation to the snapshotproperty.
+
+So let's move on to the ImageDataService.
+```java
+@Service
+public class ImageDataService {
+    private final ImageDataRepository repository;
+
+    //Path won't be hardcoded in further progress. -> Will be implemented in the application properties.
+    private final Path folderPath = Path.of("/Users/lydia/IdeaProjects/FileSystem_Images/");
+
+    public ImageDataService(ImageDataRepository repository) {
+        this.repository = repository;
+    }
+
+
+    public ImageData uploadAndSave(MultipartFile file) throws IOException {
+        if (!file.isEmpty()) {
+
+            String randomID = UUID.randomUUID().toString();
+            String originalFileName = file.getOriginalFilename();
+            String uniqueFileName = randomID.concat(originalFileName.substring(originalFileName.lastIndexOf(".")));
+
+            String filePath = "/Users/lydia/IdeaProjects/FileSystem_Images/" + uniqueFileName;
+            file.transferTo(Path.of(filePath));
+            return repository.save(new ImageData(uniqueFileName, filePath));
+
+        } else {
+            throw new RuntimeException("File is empty");
+        }
+    }
+```
+This is the first time I was confronted with the *MultipartFile*
+(Todo: add short MultipartFile explanation)
+(Add some Expections + Solution)
 
 

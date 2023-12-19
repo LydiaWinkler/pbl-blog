@@ -13,8 +13,8 @@ So, to provide a bit of background, the requirements for my app were as follows:
 - The user should be able to choose if he/she wants the next task of the list or a random one.
 - The user should be able to add a snapshot to the task.
     *Snapshots includes the Imagedata, a selfrating and a textfield where the user can enter the mistakes he/she recogniced.*
-- The User should be able to view the snapshot as well as the task itself.
-- All Images should be displayed in a galery and after clicking on a single image they should be navigated to the view of the snapshot where the image is included.
+- The user should be able to view the snapshot as well as the task itself.
+- All images should be displayed in a galery and after clicking on a single image they should be navigated to the view of the snapshot where the image is included.
 
 # Working process
 

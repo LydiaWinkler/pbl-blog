@@ -1,6 +1,6 @@
 ---
-post
-"Application blog post"
+layout: post
+title: "Image upload and save into the database"
 ---
 I lost all my nerves while writing code for my project but as programmer there is no other option than keep working on.
 I'm Lydia Winkler and I started a project called *GigglyGraphics* during my participation at the Java programming course at *everyone codes*. GigglyGraphics is for artists who wants to improve their skills by repeating a selfmade list of tasks. One of the features is to upload an Image of their drawings after finishing the task. And this blog post is about my experience with this feature.
